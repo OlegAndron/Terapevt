@@ -1,0 +1,23 @@
+﻿@inherits UmbracoTemplatePage
+<article id="@Model.Content.Name.Replace(' ', '-')" class="section-wrapper clearfix" data-custom-background-img="@(CurrentPage.HasValue("Background")?Umbraco.Media(CurrentPage.Background).umbracoFile:string.Empty)">
+    <div class="content-wrapper clearfix">
+        <div class="col-sm-11 pull-right">
+            <h1 class="section-title">@Umbraco.Field("Title")</h1>
+            <!-- feature columns -->
+            @{
+                var items = Model.Content.Children.ToList();
+                IEnumerable<IPublishedContent> group;
+            }
+            @for (var i = 0; (group = items.Skip(i).Take(3)).Count() != 0; i += 3)
+            {
+                <section class="feature-columns row clearfix">
+                    @foreach (var child in group)
+                    {
+                        @Umbraco.RenderTemplate(child.Id)
+                    }
+                </section>
+            }
+            <!-- End: Section content to edit -->
+        </div><!-- .col-sm-10 -->
+    </div><!-- .content-wrapper -->
+</article><!-- .section-wrapper -->

@@ -1,0 +1,18 @@
+﻿@inherits UmbracoTemplatePage
+<article id="@Model.Content.Name.Replace(' ', '-')" class="section-wrapper clearfix" data-custom-background-img="@(CurrentPage.HasValue("Background")?Umbraco.Media(CurrentPage.Background).umbracoFile:string.Empty)">
+    <div class="content-wrapper clearfix">
+        <div class="text-justify">
+            <section class="feature-text">
+                <h3 class="text-left" style="font-family:open_sanslight;">@Umbraco.Field("Title")</h3>
+                @{
+                    if (CurrentPage.HasValue("Photo"))
+                    {
+                        var dynamicMediaItem = Umbraco.Media(CurrentPage.Photo);
+                        <img style="width: 236px; height: 290px; float: left; margin: 7px 25px 15px 0;" src="@dynamicMediaItem.umbracoFile" alt="@dynamicMediaItem.Name" />
+                    }
+                }
+                @Umbraco.Field("Body")
+            </section>
+        </div><!-- .col-sm-10 -->
+    </div><!-- .content-wrapper -->
+</article><!-- .section-wrapper -->

@@ -1,0 +1,17 @@
+﻿@inherits UmbracoTemplatePage
+<article class="feature-col col-md-4">
+    <a href="" onclick="populate_and_open_modal(event, 'modal-content-@Model.Content.Id');" class="thumbnail linked">
+        <div class="image-container">
+            <img data-img-src="@(CurrentPage.HasValue("Image") ? Umbraco.Media(CurrentPage.Image).umbracoFile : string.Empty)" class="lazy item-thumbnail" alt="Image">
+        </div>
+        <div class="caption">
+            <h5>@Umbraco.Field("Title")</h5>
+        </div>
+    </a>
+
+    <div class="content-to-populate-in-modal" id="modal-content-@Model.Content.Id">
+        <img data-img-src="@(CurrentPage.HasValue("Image") ? Umbraco.Media(CurrentPage.Image).umbracoFile : string.Empty)" class="lazy full-width" alt="Image">
+        <h1>@Umbraco.Field("Title")</h1>
+        @Umbraco.Field("Description")
+    </div>
+</article>
