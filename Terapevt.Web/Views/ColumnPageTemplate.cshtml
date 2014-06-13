@@ -1,0 +1,16 @@
+﻿@inherits UmbracoTemplatePage
+<div class="grid-item col-md-6">
+    <div class="item-content clearfix">
+        <span class="icon glyphicon glyphicon-align-justify"></span>
+        <div class="text-content">
+            <h5>@Umbraco.Field("Title")</h5>
+            <p>@Umbraco.Field("Description")</p>
+            <p><a href="" onclick="populate_and_open_modal(event, 'modal-content-@Model.Content.Id');" class="btn btn-outline-inverse btn-sm">читать...</a></p>
+            <div class="content-to-populate-in-modal" id="modal-content-@Model.Content.Id">
+                <h1 class="text-left">@Umbraco.Field("Title")</h1>
+                @*<p><img data-img-src="/images/transp-image1.png" class="lazy rounded_border hover_effect pull-left" alt="Lorem Ipsum">Etiam at ligula sit amet arcu laoreet consequat. Duis dictum lorem metus, vitae dapibus risus imperdiet nec. <a href="#">Suspendisse molestie lorem odio</a>, sit amet. </p>*@
+                @Umbraco.Field("Body")
+            </div>
+        </div>
+    </div>
+</div>
