@@ -17,9 +17,9 @@ bld/
 [Oo]bj/
 
 #Umbraco
+
 /packages/
-/Terapevt.Web/App_Data/TEMP/
-/Terapevt.Web/App_Data/Logs
+App_Data/
 
 
 # MSTest test Results
