@@ -209,6 +209,7 @@
   <ItemGroup>
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\test.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\opensans-bold-webfont.svg" />
     <Content Include="fonts\opensans-italic-webfont.svg" />
@@ -280,6 +281,7 @@
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
+
     <Content Include="Views\Main.cshtml" />
     <Content Include="fonts\opensans-bold-webfont.eot" />
     <Content Include="fonts\opensans-bold-webfont.ttf" />
@@ -345,6 +347,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="scripts\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
