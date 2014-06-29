@@ -173,7 +173,7 @@ p {
             left:3%;  
             width:13%;
             max-width:150px;
-            min-width:150px; 
+            min-width:195px; 
             background: -moz-linear-gradient(top,  rgba(0,0,0,0.29) 0%, rgba(0,0,0,0) 78%, rgba(0,0,0,0) 100%);
             background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.29)), color-stop(78%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0)));
             background: -webkit-linear-gradient(top,  rgba(0,0,0,0.29) 0%,rgba(0,0,0,0) 78%,rgba(0,0,0,0) 100%);
@@ -189,7 +189,7 @@ p {
             left:6.5%;  
             width:13%;
             max-width:205px;
-            min-width:190px; 
+            min-width:215px; 
         }
     }
     @media (min-width: 1200px) {

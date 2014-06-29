@@ -1,0 +1,17 @@
+﻿@inherits UmbracoTemplatePage
+@{
+    Layout = null;
+}
+<div class="item">
+    <div class="carousel-text-content">
+        <img src="@(CurrentPage.HasValue("Photo") ? Umbraco.Media(CurrentPage.Photo).umbracoFile : string.Empty)" class="icon" alt="Lorem Ipsum">
+        <h2 class="title">@Umbraco.Field("FullName")</h2>
+        <p>@Umbraco.Field("Info")</p>
+        <p><a href="" onclick="populate_and_open_modal(event, 'modal-content-@Model.Content.Id');" class="btn btn-outline-inverse btn-sm">подробней</a></p>
+        <div class="content-to-populate-in-modal" id="modal-content-@Model.Content.Id">
+            <h1 class="text-left">@Umbraco.Field("FullName")</h1>
+            <img data-img-src="@(CurrentPage.HasValue("Photo") ? Umbraco.Media(CurrentPage.Photo).umbracoFile : string.Empty)" class="lazy hover_effect pull-left" alt="Lorem Ipsum">
+            @Umbraco.Field("Description")
+        </div><!-- #modal-content-5 -->
+    </div>
+</div><!-- .item -->

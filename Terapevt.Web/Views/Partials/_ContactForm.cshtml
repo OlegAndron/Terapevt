@@ -1,0 +1,46 @@
+﻿@inherits UmbracoViewPage<Terapevt.Web.Models.EmailMessageModel>
+
+@using (Html.BeginUmbracoForm("SendMessage", "ContactsSurface", null, new Dictionary<string, object> { { "class", "form-style validate-form clearfix" } }, FormMethod.Post))
+{
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.Name, new Dictionary<string, object>
+            {
+                { "class", "text-field form-control validate-field required" },
+                { "data-validation-type", "string" },
+                { "placeholder", "Полное имя" }
+            })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.From, new Dictionary<string, object>
+            {
+                { "class", "text-field form-control validate-field required" },
+                { "data-validation-type", "email" },
+                { "placeholder", "Email" }
+            })
+        </div>
+        <div class="form-group">
+            @Html.TextBoxFor(x => x.Phone, new Dictionary<string, object>
+            {
+                { "class", "text-field form-control validate-field" },
+                { "data-validation-type", "phone" },
+                { "placeholder", "Номер телефона" }
+            })
+        </div>
+    </div><!-- end: form left col -->
+                <!-- form right col -->
+    <div class="col-md-6">
+        <div class="form-group">
+            @Html.TextAreaFor(x => x.Message, new Dictionary<string, object>
+            {
+                { "class", "form-control validate-field required" },
+                { "placeholder", "Текст сообщения" }
+            })
+        </div>
+        <div class="form-group">
+            <img src="/images/loader-form.GIF" alt="загрузка..." class="form-loader">
+            <button type="submit" class="btn btn-sm btn-outline-inverse">Отправить</button>
+        </div>
+        <div class="form-group form-general-error-container"></div>
+    </div><!-- end: form right col -->
+}

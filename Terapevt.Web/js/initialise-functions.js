@@ -116,6 +116,11 @@ function initialise_document_ready_functions()
 
     });
     // end: on window scroll
+    $('[id^=spoiler]').slideUp();
+    $('.spoilerHeader').click(function () {
+        $('#spoiler'+$(this).data('spoiler')).slideToggle();
+        return false;
+    });
 
 }
 // end: initialise_document_ready_functions()

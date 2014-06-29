@@ -307,19 +307,15 @@
     <Content Include="Views\ContactsPageTemplate.cshtml" />
     <Content Include="Views\GalleryItemTemplate.cshtml" />
     <Content Include="Views\ColumnPageTemplate.cshtml" />
+    <Content Include="Views\Partials\_ContactForm.cshtml" />
+    <Content Include="Views\SlidePageTemplate.cshtml" />
+    <None Include="Properties\PublishProfiles\hoster-ftp.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <Content Include="Views\Partials\umbAbout.cshtml" />
-    <Content Include="Views\Partials\umbFeatures.cshtml" />
-    <Content Include="Views\Partials\umbHomepageBanner.cshtml" />
-    <Content Include="Views\Partials\umbLatestNewsWidget.cshtml" />
-    <Content Include="Views\Partials\umbNewsOverviewWidget.cshtml" />
-    <Content Include="Views\Partials\umbSocial.cshtml" />
-    <Content Include="Views\Partials\umbTopNavigation.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="xslt\Web.config" />
   </ItemGroup>
@@ -341,25 +337,11 @@
     <Content Include="Global.asax" />
     <Content Include="images\mobileUI-site-nav-opener-bg.svg" />
     <Content Include="images\mobileUI-site-nav.svg" />
-    <Content Include="masterpages\dummy.txt" />
-    <Content Include="media\SampleImages\1001\pic03.jpg" />
-    <Content Include="media\SampleImages\1001\pic03_thumb.jpg" />
-    <Content Include="media\SampleImages\1008\banner.jpg" />
-    <Content Include="media\SampleImages\1008\banner_big-thumb.jpg" />
-    <Content Include="media\SampleImages\1008\banner_thumb.jpg" />
-    <Content Include="media\SampleImages\1060\pic02.jpg" />
-    <Content Include="media\SampleImages\1060\pic02_thumb.jpg" />
-    <Content Include="media\SampleImages\1061\pic04.jpg" />
-    <Content Include="media\SampleImages\1061\pic04_thumb.jpg" />
-    <Content Include="media\SampleImages\1063\pic01.jpg" />
-    <Content Include="media\SampleImages\1063\pic01_thumb.jpg" />
-    <Content Include="media\SampleImages\1077\pic05.jpg" />
-    <Content Include="media\SampleImages\1077\pic05_thumb.jpg" />
-    <Content Include="media\SampleImages\1078\pic03.jpg" />
-    <Content Include="usercontrols\dummy.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ContactsSurfaceController.cs" />
+    <Compile Include="Models\EmailMessageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
