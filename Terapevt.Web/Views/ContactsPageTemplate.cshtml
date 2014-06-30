@@ -1,8 +1,4 @@
-﻿@using Terapevt.Web.Models
-@inherits UmbracoTemplatePage
-@{
-    Layout = null;
-}
+﻿@inherits UmbracoTemplatePage
 <article id="@Model.Content.Name.Replace(' ', '-')" class="section-wrapper clearfix" data-custom-background-img="@(CurrentPage.HasValue("Background")?Umbraco.Media(CurrentPage.Background).umbracoFile:string.Empty)">
     <div class="content-wrapper clearfix">
         <h1 class="section-title">@Umbraco.Field("Title")</h1>
@@ -12,7 +8,7 @@
             <p><a style="border: none;" href="skype:@Umbraco.Field("Skype")?chat" title="Skype"><img src="/images/skype.png" alt="Skype" /> @Umbraco.Field("Skype")</a></p>
         </div>
         <div class="col-sm-7 col-md-9">
-            @Html.Partial("~/Views/Partials/_ContactForm.cshtml", new EmailMessageModel())
+            @Html.Partial("~/Views/Partials/_ContactForm.cshtml", new Terapevt.Web.Models.EmailMessageModel())
         </div>
     </div>
 </article>

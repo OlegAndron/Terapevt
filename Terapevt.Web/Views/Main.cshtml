@@ -12,10 +12,10 @@
     <meta name="description" content="@Umbraco.Field("metaDescription")">
     <meta name="author" content="">
     
-    <meta property="og:title" content="@Umbraco.Field("OgTitle")">
-    <meta property="og:description" content="@Umbraco.Field("OgDescription")">
-    <meta property="og:type" content="@Umbraco.Field("OgType")">
-    <meta property="og:url" content="@Umbraco.Field("OgUrl")">
+    <meta property="og:title" content="@Umbraco.Field("ogTitle")">
+    <meta property="og:description" content="@Umbraco.Field("ogDescription")">
+    <meta property="og:type" content="@Umbraco.Field("ogType")">
+    <meta property="og:url" content="@Umbraco.Field("ogUrl")">
     <meta property="og:image" content="@(CurrentPage.HasValue("ogImage") ? "http://" + HttpContext.Current.Request.Url.Host+Umbraco.Media(CurrentPage.ogImage).umbracoFile : string.Empty)">
 
     <title>@Umbraco.Field("siteTitle")</title>

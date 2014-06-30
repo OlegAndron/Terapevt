@@ -281,7 +281,6 @@
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
-
     <Content Include="Views\Main.cshtml" />
     <Content Include="fonts\opensans-bold-webfont.eot" />
     <Content Include="fonts\opensans-bold-webfont.ttf" />
@@ -346,10 +345,7 @@
     <Compile Include="Models\EmailMessageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="scripts\" />
-    <Folder Include="Views\MacroPartials\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
