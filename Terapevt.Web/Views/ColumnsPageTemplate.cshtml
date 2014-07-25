@@ -1,5 +1,5 @@
 ﻿@inherits UmbracoTemplatePage
-<article id="@Model.Content.Name.Replace(' ', '-')" class="section-wrapper clearfix" data-custom-background-img="/images/bg2.jpg">
+<article id="@Model.Content.Name.Replace(' ', '-')" class="section-wrapper clearfix" data-custom-background-img="@(CurrentPage.HasValue("Background")?Umbraco.Media(CurrentPage.Background).umbracoFile:string.Empty)">
     <div class="content-wrapper clearfix">
         <div class="col-sm-11 col-md-10 pull-right">
             <h1 class="section-title">@Umbraco.Field("Title")</h1>

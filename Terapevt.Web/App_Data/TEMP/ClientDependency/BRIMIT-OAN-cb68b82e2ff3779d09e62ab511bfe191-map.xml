@@ -227,4 +227,17 @@
       <file name="/umbraco/assets/css/umbraco.css" />
     </files>
   </item>
+  <item key="L3VtYnJhY29fY2xpZW50L0RpYWxvZ3MvUHVibGlzaERpYWxvZy5jc3M7L3VtYnJhY28vYXNzZXRzL2Nzcy91bWJyYWNvLmNzczs" file="D:\Data\Inetpub\Terapevt\Terapevt.Web\App_Data\TEMP\ClientDependency\934866243_e1634860af7b4af0a59e1f6d07efef01.cdC" compression="gzip" version="934866243">
+    <files>
+      <file name="/umbraco_client/Dialogs/PublishDialog.css" />
+      <file name="/umbraco/assets/css/umbraco.css" />
+    </files>
+  </item>
+  <item key="L3VtYnJhY29fY2xpZW50L3VpL2RlZmF1bHQuanM7L3VtYnJhY28vanMvdW1icmFjb0NoZWNrS2V5cy5qczsvdW1icmFjb19jbGllbnQvRGlhbG9ncy9QdWJsaXNoRGlhbG9nLmpzOw" file="D:\Data\Inetpub\Terapevt\Terapevt.Web\App_Data\TEMP\ClientDependency\934866243_d105b401b28149d79594ff57845de525.cdJ" compression="gzip" version="934866243">
+    <files>
+      <file name="/umbraco_client/ui/default.js" />
+      <file name="/umbraco/js/umbracoCheckKeys.js" />
+      <file name="/umbraco_client/Dialogs/PublishDialog.js" />
+    </files>
+  </item>
 </map>
