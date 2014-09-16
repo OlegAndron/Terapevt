@@ -1,7 +1,6 @@
-﻿@using Terapevt.Web.Controllers
-@inherits UmbracoViewPage<Terapevt.Web.Models.EmailMessageModel>
+﻿@inherits UmbracoViewPage<Terapevt.Web.Models.EmailMessageModel>
 
-@using (Html.BeginUmbracoForm<ContactsSurfaceController>("SendMessage", null, new Dictionary<string, object> { { "class", "form-style validate-form clearfix" } }))
+@using (Ajax.BeginForm("SendMessage", "ContactsSurface", null, new AjaxOptions { UpdateTargetId = "update" }, new Dictionary<string, object> { { "class", "form-style validate-form clearfix" } }))
 {
     <div class="col-md-6">
         <div class="form-group">

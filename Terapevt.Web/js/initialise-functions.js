@@ -118,7 +118,10 @@ function initialise_document_ready_functions()
     // end: on window scroll
     $('[id^=spoiler]').slideUp();
     $('.spoilerHeader').click(function () {
-        $('#spoiler'+$(this).data('spoiler')).slideToggle();
+        var num = $(this).data('spoiler');
+        $('#spoiler' + num).slideToggle();
+        var id = 'spoiler' + num; 
+        $('[id^=spoiler]').filter(function (index) { return this.id != id; }).slideUp();
         return false;
     });
 

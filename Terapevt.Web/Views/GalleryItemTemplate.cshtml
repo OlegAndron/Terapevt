@@ -4,9 +4,7 @@
         <div class="image-container">
             <img data-img-src="@(CurrentPage.HasValue("Image") ? Umbraco.Media(CurrentPage.Image).umbracoFile : string.Empty)" class="lazy item-thumbnail" alt="Image">
         </div>
-        <div class="caption">
-            <h5>@Umbraco.Field("Title")</h5>
-        </div>
+        
     </a>
 
     <div class="content-to-populate-in-modal" id="modal-content-@Model.Content.Id">
