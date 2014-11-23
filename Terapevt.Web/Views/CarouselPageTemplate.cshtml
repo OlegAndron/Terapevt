@@ -1,6 +1,7 @@
 ﻿@inherits UmbracoTemplatePage
 <article id="@Model.Content.Name.Replace(' ', '-')" class="section-wrapper clearfix" data-custom-background-img="@(CurrentPage.HasValue("Background")?Umbraco.Media(CurrentPage.Background).umbracoFile:string.Empty)">
     <div class="content-wrapper clearfix">
+        <h1 class="section-title">@Umbraco.Field("Title")</h1>
         <div id="features-carousel" class="carousel slide with-title-indicators max-height" data-height-percent="70" data-ride="carousel">
             <!-- Indicators - slide navigation -->
             <ol class="carousel-indicators title-indicators">
