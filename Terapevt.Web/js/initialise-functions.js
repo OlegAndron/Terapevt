@@ -124,13 +124,26 @@ function initialise_document_ready_functions()
         $('[id^=spoiler]').filter(function (index) { return this.id != id; }).slideUp();
         return false;
     });
-
+    
 }
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 // end: initialise_document_ready_functions()
 
 $(document).ready(function()
 {
     initialise_document_ready_functions();
+    
+    var article = getParameterByName('article');
+    if (article) {
+        populate_and_open_modal(event, $('div[data-article="' + article + '"]').attr('id'));
+    }
 });
 
  /* 
@@ -148,16 +161,20 @@ function initialise_window_load_functions()
     set_equal_height_to_all_carousel_slides_on_small_displays();
 
     // Sections Content Vertical Position (when not viewing on a mobile)
-    if (!jQuery.browser.mobile || viewport().width > window.xs_screen_max) sections_content_vertical_position();
+    if (!jQuery.browser.mobile || viewport().width > window.xs_screen_max)
+        sections_content_vertical_position();
 
     // preload all section background images after all elements were loaded (when not viewing on a mobile)
-    if (!jQuery.browser.mobile || viewport().width > window.xs_screen_max) preload_section_backgrounds();
+    if (!jQuery.browser.mobile || viewport().width > window.xs_screen_max)
+        preload_section_backgrounds();
 
     // Grid Items Clearfix
-    if (!jQuery.browser.mobile || viewport().width > window.xs_screen_max) add_clear_items_to_fix_grid_items_different_heights_issue();
+    if (!jQuery.browser.mobile || viewport().width > window.xs_screen_max)
+        add_clear_items_to_fix_grid_items_different_heights_issue();
 
     // Load images after other elements are loaded
     load_images("lazy", true, true);
+    
 
 }
 // end: initialise_window_load_functions()
