@@ -11,7 +11,7 @@
     <meta name="keywords" content="@Umbraco.Field("metaKeywords")">
     <meta name="description" content="@Umbraco.Field("metaDescription")">
     <meta name="author" content="">
-    
+
     <meta property="og:title" content="@Umbraco.Field("ogTitle")">
     <meta property="og:description" content="@Umbraco.Field("ogDescription")">
     <meta property="og:type" content="@Umbraco.Field("ogType")">
@@ -78,7 +78,7 @@
             <div id="go-to-top" onclick="scroll_to_top();"><span class="icon glyphicon glyphicon-chevron-up"></span></div>
             <p style="font-size: 13px; font-weight: bold;">@Umbraco.Field("sidebarPhone")</p>
             <ul class="social-icons">
-                
+
                 <li><a href="skype:@Umbraco.Field("sidebarSkype")?chat" title="Skype"><img src="/images/skype.png" alt="Skype"></a></li>
                 <li><a href="@Umbraco.Field("sidebarFacebook")" target="_blank" title="Facebook"><img src="/images/facebook.png" alt="Facebook"></a></li>
                 @*<li><a href="#" target="_blank" title="Email"><img src="/images/at.png" alt="Email"></a></li>*@
@@ -103,9 +103,11 @@
         </div><!-- .modal-dialog -->
     </div><!-- .modal -->
     <!-- Javascripts
-    ================================================== -->
+        ================================================== -->
     <!-- Jquery and Bootstrap JS -->
     <script src="/js/jquery-1.10.2.min.js"></script>
+
+
     <script src="/js/bootstrap.min.js"></script>
 
     <!-- Easing - for transitions and effects -->
@@ -114,13 +116,13 @@
     <!-- background image strech script -->
     <script src="/js/jquery.backstretch.min.js"></script>
     <!-- background image fix for IE 9 or less
-       - use same background as set above to <body> -->
+        - use same background as set above to <body> -->
     <!--[if lt IE 9]>
-    <script type="text/javascript">
-    $(document).ready(function(){
-      jQuery("#outer-background-container").backstretch("/images/bg5.jpg");
-    });
-    </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                jQuery("#outer-background-container").backstretch("/images/bg5.jpg");
+            });
+        </script>
     <![endif]-->
     <!-- detect mobile browsers -->
     <script src="/js/detectmobilebrowser.js"></script>
@@ -131,10 +133,15 @@
     <!-- Custom functions for this theme -->
     <script src="/js/functions.min.js"></script>
     <script src="/js/initialise-functions.js"></script>
-
+    @*<script type="text/javascript">
+        $(window).load(function () {
+            var elem = document.getElementById("@Request.QueryString["page"]");
+            if (elem) location.hash = elem.id;
+        })
+    </script>*@
     <!-- IE9 form fields placeholder fix -->
     <!--[if lt IE 9]>
-    <script>contact_form_IE9_placeholder_fix();</script>
+        <script>contact_form_IE9_placeholder_fix();</script>
     <![endif]-->
 </body>
 </html>
