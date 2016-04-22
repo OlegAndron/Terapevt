@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <NuGetPackageImportStamp>7844bcf6</NuGetPackageImportStamp>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -237,6 +238,7 @@
     <Content Include="images\googleplus.png" />
     <Content Include="images\loader-form.GIF" />
     <Content Include="images\logo.png" />
+    <Content Include="images\mobile_section_divider.png" />
     <Content Include="images\more-plus-icon.png" />
     <Content Include="images\project-2.jpg" />
     <Content Include="images\project-3.jpg" />
@@ -268,7 +270,9 @@
     <Content Include="macroScripts\Web.config" />
     <Content Include="config\UrlRewriting.config" />
     <Content Include="config\umbracoSettings.config" />
-    <Content Include="config\trees.config" />
+    <Content Include="config\trees.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="config\tinyMceConfig.config" />
     <Content Include="config\scripting.config" />
     <Content Include="config\metablogConfig.config" />
@@ -313,7 +317,7 @@
     <Content Include="Views\Partials\_ContactForm.cshtml" />
     <Content Include="Views\SlidePageTemplate.cshtml" />
     <None Include="Properties\PublishProfiles\hoster-ftp.pubxml" />
-    <Content Include="Views\_ViewStart.cshtml" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

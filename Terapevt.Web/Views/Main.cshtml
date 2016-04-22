@@ -133,12 +133,12 @@
     <!-- Custom functions for this theme -->
     <script src="/js/functions.min.js"></script>
     <script src="/js/initialise-functions.js"></script>
-    @*<script type="text/javascript">
+    <script type="text/javascript">
         $(window).load(function () {
-            var elem = document.getElementById("@Request.QueryString["page"]");
-            if (elem) location.hash = elem.id;
+            var elem = $("a[href='#@Request.QueryString["page"]']");
+            if (elem) elem.click();
         })
-    </script>*@
+    </script>
     <!-- IE9 form fields placeholder fix -->
     <!--[if lt IE 9]>
         <script>contact_form_IE9_placeholder_fix();</script>
