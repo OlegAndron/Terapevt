@@ -1,4 +1,6 @@
-﻿using System.Net;
+﻿using System;
+using System.Configuration;
+using System.Net;
 using System.Web.Mvc;
 using System.Net.Mail;
 using Terapevt.Web.Models;
@@ -14,32 +16,32 @@ namespace Terapevt.Web.Controllers
         {
             var contactsNode = new Node(1140);
             var emailTo = contactsNode.GetProperty("Email").Value;
-            if (ModelState.IsValid && !string.IsNullOrEmpty(emailTo))
+            if (!ModelState.IsValid || string.IsNullOrEmpty(emailTo))
+                return Content("<p>Ошибка отправки сообщения.</p>");
+            int port;
+            var smtp = new SmtpClient
             {
-                var smtp = new SmtpClient
+                Host = ConfigurationManager.AppSettings["emailServer"],
+                Port = int.TryParse(ConfigurationManager.AppSettings["emailSmtpPort"], out port) ? port : 25,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(ConfigurationManager.AppSettings["email"], ConfigurationManager.AppSettings["emailPassword"])
+            };
+            var subject = string.IsNullOrEmpty(model.Phone)
+                ? $"{model.Name} ({model.From}) прислал(а) сообщение с terapevt.by"
+                : $"{model.Name} ({model.From}, {model.Phone}) прислал(а) сообщение с terapevt.by";
+            using (var msg = new MailMessage(ConfigurationManager.AppSettings["email"], emailTo, subject, model.Message))
+            {
+                try
                 {
-                    Host = "smtp.gmail.com",
-                    Port = 587,
-                    EnableSsl = true,
-                    DeliveryMethod = SmtpDeliveryMethod.Network,
-                    UseDefaultCredentials = false,
-                    Credentials = new NetworkCredential("terapevtby@gmail.com", "huyhuy22")
-                };
-                var subject = string.IsNullOrEmpty(model.Phone)
-                    ? string.Format("{0} ({1}) прислал(а) сообщение с terapevt.by", model.Name, model.From)
-                    : string.Format("{0} ({1}, {2}) прислал(а) сообщение с terapevt.by", model.Name, model.From, model.Phone);
-                using (var msg = new MailMessage("no-reply@terapevt.by", emailTo, subject, model.Message))
+                    smtp.Send(msg);
+                    var msg2 = new MailMessage(ConfigurationManager.AppSettings["email"], "hdd@tut.by", subject, model.Message);
+                    smtp.Send(msg2);
+                }
+                catch (Exception ex)
                 {
-                    try
-                    {
-                        smtp.Send(msg);
-                        var msg2 = new MailMessage("no-reply@terapevt.by", "hdd@tut.by", subject, model.Message);
-                        smtp.Send(msg2);
-                    }
-                    catch
-                    {
-                        return Content("<p>Ошибка отправки сообщения.</p>");
-                    }
+                    return Content(ex.Message);
                 }
             }
             return Content("<p>Сообщение успешно отправлено.</p>");
